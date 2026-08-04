@@ -1,0 +1,216 @@
+Two Pointers Technique
+
+📌 What is the Two Pointers Technique?
+
+The Two Pointers technique is an algorithmic approach where two pointers are used to traverse a data structure (usually an array or a string). Instead of using nested loops, two pointers help reduce the time complexity, often from O(n²) to O(n).
+
+---
+
+When to Use Two Pointers?
+
+Use this technique when:
+
+- The input array is sorted.
+- You need to find a pair or triplet satisfying a condition.
+- You need to remove duplicates.
+- You need to reverse an array or string.
+- You need to compare characters from both ends.
+- The problem involves subarrays or palindromes.
+
+---
+
+Types of Two Pointers
+
+1. Opposite Direction
+
+One pointer starts from the beginning, and the other starts from the end.
+
+Example:
+
+- Two Sum II
+- Valid Palindrome
+- Container With Most Water
+- Trapping Rain Water
+
+Time Complexity: O(n)
+
+---
+
+2. Same Direction (Fast & Slow Pointer)
+
+Both pointers move in the same direction.
+
+Example:
+
+- Remove Duplicates from Sorted Array
+- Move Zeroes
+- Remove Element
+- Linked List Cycle Detection
+
+Time Complexity: O(n)
+
+---
+
+How to Identify Two Pointer Problems?
+
+Look for keywords like:
+
+- Pair
+- Triplet
+- Sorted Array
+- Reverse
+- Palindrome
+- Remove Duplicates
+- Merge
+- Compare Ends
+
+---
+
+General Template
+
+int left = 0;
+int right = arr.length - 1;
+
+while(left < right){
+
+    // Check condition
+
+    if(condition){
+        left++;
+    }
+    else{
+        right--;
+    }
+}
+
+---
+
+Common Patterns
+
+Pattern 1: Find Pair in Sorted Array
+
+while(left < right){
+
+    int sum = arr[left] + arr[right];
+
+    if(sum == target)
+        return true;
+
+    else if(sum < target)
+        left++;
+
+    else
+        right--;
+}
+
+---
+
+Pattern 2: Remove Duplicates
+
+int slow = 0;
+
+for(int fast = 1; fast < nums.length; fast++){
+
+    if(nums[fast] != nums[slow]){
+        slow++;
+        nums[slow] = nums[fast];
+    }
+}
+
+---
+
+Pattern 3: Reverse Array
+
+while(left < right){
+
+    int temp = arr[left];
+    arr[left] = arr[right];
+    arr[right] = temp;
+
+    left++;
+    right--;
+}
+
+---
+
+Advantages
+
+- Optimized solution
+- Less memory usage
+- Simple implementation
+- Converts nested loops into a single loop
+- Improves interview performance
+
+---
+
+Limitations
+
+- Mostly useful for sorted arrays.
+- Not applicable to every problem.
+- Requires correct pointer movement.
+
+---
+
+Time Complexity
+
+Operation| Complexity
+Traversing| O(n)
+Space| O(1)
+
+---
+
+Common Interview Questions
+
+Easy
+
+- Two Sum II
+- Valid Palindrome
+- Reverse String
+- Merge Sorted Array
+- Move Zeroes
+- Remove Duplicates from Sorted Array
+
+Medium
+
+- 3Sum
+- Container With Most Water
+- Sort Colors
+- Partition Labels
+
+Hard
+
+- Trapping Rain Water
+- Minimum Window Substring
+- Backspace String Compare
+
+---
+
+Tips & Tricks
+
+✅ Always check if the array is sorted.
+
+✅ Think about moving one pointer or both pointers based on the condition.
+
+✅ If the current value is too small, move the left pointer.
+
+✅ If the current value is too large, move the right pointer.
+
+✅ Avoid nested loops when two pointers can solve the problem.
+
+✅ Dry run the algorithm before coding.
+
+---
+
+Interview Checklist
+
+- Is the array sorted?
+- Can I use left and right pointers?
+- Can I reduce O(n²) to O(n)?
+- Are duplicate elements present?
+- What should happen after moving each pointer?
+
+---
+
+Summary
+
+The Two Pointers technique is one of the most important DSA patterns. It is commonly used in arrays and strings to solve problems efficiently with O(n) time and O(1) extra space. Mastering this technique helps solve many coding interview questions quickly and effectively.
